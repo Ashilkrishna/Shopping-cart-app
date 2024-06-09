@@ -5,14 +5,19 @@ import Search from './components/Search';
 import Delete from './components/Delete';
 import NavBar from './components/NavBar';
 import ViewAll from './components/ViewAll';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Add/>
-      <Search/>
-      <Delete/>
-      <ViewAll/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Add/>}/>
+          <Route path="/search" element={<Search/>}/>
+          <Route path="/delete" element={<Delete/>}/>
+          <Route path="/view" element={<ViewAll/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
